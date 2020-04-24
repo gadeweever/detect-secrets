@@ -60,6 +60,8 @@ class SecretsCollection:
         try:
             return cls.load_baseline_from_dict(json.loads(string))
         except (IOError, ValueError):
+            log.error(ValueError)
+            log.Error(IOError)
             log.error('Incorrectly formatted baseline!')
             raise
 
